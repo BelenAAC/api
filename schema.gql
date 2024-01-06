@@ -1,0 +1,93 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type MasterModel {
+  id: ID!
+  nombre: String!
+  correo: String!
+  nivel: String!
+  idCompanero: String!
+}
+
+type EliminacionPokemon {
+  mensaje: String!
+}
+
+type EliminacionEntrenador {
+  mensaje: String!
+}
+
+type PayloadModel {
+  token: String!
+  master: MasterModel!
+}
+
+type LogoutMensaje {
+  mensaje: String!
+}
+
+type PokemonModel {
+  id: ID!
+  nombre: String!
+  tipo: String!
+  nivel: String!
+  puntosSalud: String!
+  movimiento: String!
+}
+
+type Query {
+  getMaster(id: String!): MasterModel!
+  listMasters: [MasterModel!]!
+  getPokemon(id: String!): PokemonModel!
+  listPokemons: [PokemonModel!]!
+}
+
+type Mutation {
+  createMaster(createMasterInput: CreateMasterInput!): MasterModel!
+  updateMaster(updateMasterInput: UpdateMasterInput!): MasterModel!
+  loginMaster(loginMasterInput: LoginMasterInput!): PayloadModel!
+  logoutMaster(id: String!): LogoutMensaje!
+  deleteMaster(id: String!): EliminacionEntrenador!
+  createPokemon(createPokemonInput: CreatePokemonInput!): PokemonModel!
+  updatePokemon(updatePokemonInput: UpdatePokemonInput!): PokemonModel!
+  deletePokemon(id: String!): EliminacionPokemon!
+}
+
+input CreateMasterInput {
+  nombre: String!
+  correo: String!
+  contrasena: String!
+  nivel: String!
+  idCompanero: String!
+}
+
+input UpdateMasterInput {
+  id: ID!
+  nombre: String
+  correo: String
+  nivel: String
+  idCompanero: String
+}
+
+input LoginMasterInput {
+  correo: String!
+  contrasena: String!
+}
+
+input CreatePokemonInput {
+  nombre: String!
+  tipo: String!
+  nivel: String!
+  puntosSalud: String!
+  movimiento: String!
+}
+
+input UpdatePokemonInput {
+  id: ID!
+  nombre: String
+  tipo: String
+  nivel: String
+  puntosSalud: String
+  movimiento: String
+}

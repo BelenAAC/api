@@ -154,8 +154,8 @@
       }
       console.log("response", response.nombre);
       console.log("response", response.correo);
-      console.log("response", response.contrasena);
       console.log("response", response.nivel);
+      console.log("response", response.idCompanero);
       return {
         id: response.id,
         nombre: response.nombre,

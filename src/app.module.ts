@@ -6,6 +6,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { MasterModule } from './masters/master.module';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { PokemonModule } from './pokemons/pokemon.module';
+import { TypeModule } from './types/type.module';
 
 
 @Module({
@@ -14,7 +15,7 @@ import { PokemonModule } from './pokemons/pokemon.module';
       driver: ApolloDriver,
       autoSchemaFile: 'schema.gql',
     }),
-    MasterModule,PokemonModule
+    MasterModule,PokemonModule,TypeModule
   
     
   ],

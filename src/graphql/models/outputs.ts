@@ -15,6 +15,12 @@ export class EliminacionEntrenador {
 }
 
 @ObjectType()
+export class EliminacionTipo {
+  @Field()
+  mensaje: string;
+}
+
+@ObjectType()
 export class EntrenadorUpdate{
   @Field(() => ID)
   id: string;

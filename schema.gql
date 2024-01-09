@@ -18,6 +18,10 @@ type EliminacionEntrenador {
   mensaje: String!
 }
 
+type EliminacionTipo {
+  mensaje: String!
+}
+
 type PayloadModel {
   token: String!
   master: MasterModel!
@@ -36,11 +40,19 @@ type PokemonModel {
   movimiento: String!
 }
 
+type TypeModel {
+  id: ID!
+  nombre: String!
+  descripcion: String!
+}
+
 type Query {
   getMaster(id: String!): MasterModel!
   listMasters: [MasterModel!]!
   getPokemon(id: String!): PokemonModel!
   listPokemons: [PokemonModel!]!
+  getType(id: String!): TypeModel!
+  listTypes: [TypeModel!]!
 }
 
 type Mutation {
@@ -52,6 +64,9 @@ type Mutation {
   createPokemon(createPokemonInput: CreatePokemonInput!): PokemonModel!
   updatePokemon(updatePokemonInput: UpdatePokemonInput!): PokemonModel!
   deletePokemon(id: String!): EliminacionPokemon!
+  createType(createTypeInput: CreateTypeInput!): TypeModel!
+  updateType(updateTypeInput: UpdateTypeInput!): TypeModel!
+  deleteType(id: String!): EliminacionTipo!
 }
 
 input CreateMasterInput {
@@ -90,4 +105,15 @@ input UpdatePokemonInput {
   nivel: String
   puntosSalud: String
   movimiento: String
+}
+
+input CreateTypeInput {
+  nombre: String!
+  descripcion: String!
+}
+
+input UpdateTypeInput {
+  id: ID!
+  nombre: String
+  descripcion: String
 }

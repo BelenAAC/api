@@ -104,9 +104,10 @@
         throw new Error('No se encontró el Pokemono');
       }
       console.log("response", response.nombre);
-      console.log("response", response.sku);
-      console.log("response", response.precio);
-      console.log("response", response.descripcion);
+      console.log("response", response.tipo);
+      console.log("response", response.nivel);
+      console.log("response", response.puntosSalud);
+      console.log("response", response.movimiento);
       return {
         id: response.id,
         nombre: response.nombre,

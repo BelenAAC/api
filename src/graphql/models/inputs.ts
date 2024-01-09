@@ -37,6 +37,15 @@ export class CreatePokemonInput {
 }
 
 @InputType()
+export class CreateTypeInput {
+  @Field()
+  nombre: string;
+
+  @Field()
+  descripcion: string;
+}
+
+@InputType()
 export class UpdateMasterInput {
   @Field(() => ID)
   id: string;
@@ -76,6 +85,18 @@ export class UpdatePokemonInput {
 }
 
 @InputType()
+export class UpdateTypeInput {
+  @Field(() => ID)
+  id: string;
+
+  @Field({ nullable: true })
+  nombre?: string;
+
+  @Field({ nullable: true })
+  descripcion?: string;
+}
+
+@InputType()
 export class DeleteMasterInput {
   @Field(() => ID)
   id: string;
@@ -90,6 +111,11 @@ export class LoginMasterInput {
   contrasena: string;
 }
 export class DeletePokemonInput {
+  @Field(() => ID)
+  id: string;
+}
+@InputType()
+export class DeleteTypeInput {
   @Field(() => ID)
   id: string;
 }
